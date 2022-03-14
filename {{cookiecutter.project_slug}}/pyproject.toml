@@ -2,12 +2,7 @@
 name = "{{ cookiecutter.project_slug }}"
 version = "0.0.1"
 description = "{{ cookiecutter.project_short_description }}"
-authors = [
-    "{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>",
-]
-
 readme = "README.md"
-homepage = "https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }}"
 repository = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}"
 
 [tool.poetry.dependencies]
@@ -37,13 +32,13 @@ src_paths = ["src", "tests"]
 target-version = ["py38", "py39", "py310"]
 include = '\.pyi?$'
 
-[tool.pytest.ini_options]
-addopts = """\
-    --cov {{ cookiecutter.package_name }} \
-    --cov tests \
-    --cov-report term-missing \
-    --no-cov-on-fail \
-"""
+# [tool.pytest.ini_options]
+# addopts = """\
+#     --cov {{ cookiecutter.package_name }} \
+#     --cov tests \
+#     --cov-report term-missing \
+#     --no-cov-on-fail \
+# """
 
 [tool.coverage.report]
 fail_under = 100
