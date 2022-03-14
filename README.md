@@ -41,7 +41,7 @@ YYYYMM-client-project     <- The top-level repository in the stated naming conve
 ## Dependencies
 
 To be able to properly work with this template some lodal dependencies need to be fullfilled. Namely `Git`, `DVC`, 
-`cruft`, and `Poetry` need to be installed. If you are using the ACNE python dev container, all these will be in place.
+`cruft`, and `Poetry` need to be installed.
 
 
 ## Usage
