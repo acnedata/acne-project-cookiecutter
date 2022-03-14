@@ -20,11 +20,11 @@ YYYYMM-client-project     <- The top-level repository in the stated naming conve
 ├── README.md             <- The top-level README with a brief description of this project.
 │
 ├── data                  <- Here all data is stored which is being version controlled by DVC.
-│
+│   │
 │   ├── interim           <- Data generated in intermediate cleaning and transformation steps.
-│
+│   │
 │   ├── processed         <- The final, fully processed data used for traning and visualizations.
-│
+│   │
 │   └── raw               <- The original, immutable data.
 │
 ├── notebooks             <- Jupyter notebooks used for data exploration and code experimentation.
