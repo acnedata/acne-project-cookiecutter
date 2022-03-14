@@ -1,5 +1,0 @@
-[core]
-    remote = dvcstore
-    autostage = true
-['remote "dvcstore"']
-    url = {{ cookiecutter.dvc_s3_bucket }}/{{ cookiecutter.project_slug }}
