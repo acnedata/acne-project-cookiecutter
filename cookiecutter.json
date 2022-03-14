@@ -1,0 +1,9 @@
+{
+    "author_name": "Your name",
+    "author_email": "Your email address (e.q. you@example.com)",
+    "github_username": "",
+    "project_name": "Name of the project in the following format: YYYYMM-client-project (e.g. 202203-acne-survey-analysis)",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+    "project_short_description": "A short description of the project",
+    "dvcstore_s3_bucket": "URL to the S3 bucket for DVC (e.g. s3://mybucket)"
+}
