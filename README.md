@@ -85,7 +85,7 @@ pre-commit install
 Is as easy as cloning the repository stored on GitHub. `cd` to the folder where you store your local repositories
 (such as `~/github/`), and run (changing placeholders):
 ```
-git clone https://username:password@github.com/acnedata/YYYY-MM-client-project> .
+git clone https://github.com/acnedata/YYYY-MM-client-project> .
 ```
 
 
