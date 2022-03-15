@@ -92,6 +92,15 @@ Is as easy as cloning the repository stored on GitHub. `cd` to the folder where 
 git clone https://github.com/acnedata/YYYY-MM-client-project> .
 ```
 
+`cd` into the project directory and run Poetry to set up the environment.
+```
+poetry install
+```
+
+To pull the data from DVC run:
+```
+dvc pull
+```
 
 ## Usage
 
