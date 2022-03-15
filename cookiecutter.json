@@ -1,7 +1,9 @@
 {
     "project_name": "YYYY-MM-client-project",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
-    "project_short_description": "A short description of the project",
     "dvc_s3_bucket": "s3://ad-dvcstore",
-    "github_account": "acnedata"
+    "github_account": "acnedata",
+    "project_short_description": "A short description of the project",
+    "author_name": "Firstname Lastname",
+    "author_mail": "you@example.com"
 }

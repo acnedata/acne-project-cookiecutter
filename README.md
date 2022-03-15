@@ -56,30 +56,25 @@ cruft create https://github.com/acnedata/adcc-projects
 
 Then `cd` into this new directory and initialize it with:
 ```
-git init && dvc init && dvc install
+git init && dvc install
 ```
 
-3. Then install the Git hooks that syncronize some of the Git and DVC commands.
-```
-dvc install
-```
-
-4. Next a repository on GitHub as to be created with the follwing command (changing placeholders of course):
+3. Next a repository on GitHub as to be created with the follwing command (changing placeholders of course):
 ```
 gh repo create --private acnedata/<YYYY-MM-client-project>
 ```
 
-5. And then this repository to be added as remote to the local project (it is recommended to use this https-syntax):
+4. And then this repository to be added as remote to the local project (it is recommended to use this https-syntax):
 ```
 git remote add origin https://github.com/acnedata/<YYYY-MM-client-project>
 ```
 
-6. We next install all dev-dependencies with Poetry.
+5. We next install all dev-dependencies with Poetry.
 ```
 poetry install
 ```
 
-7. And add code-formatting pre-commit hooks.
+6. And add code-formatting pre-commit hooks.
 ```
 pre-commit install
 ```
