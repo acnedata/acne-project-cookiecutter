@@ -1,4 +1,4 @@
-# ACNE Data Cookiecutter: Projects
+# *A*CNE *D*ata *C*ookie*c*utter: Projects
 
 This is a [cookiecutter](https://cookiecutter.readthedocs.io/) template used to set up a fresh data project at ACNE
 Data.
@@ -49,7 +49,7 @@ GitHub CLI, Git, DVC, cruft, and Poetry need to be installed.
 
 1. Move into the directory where you want to create a new project and run:
 ```bash
-cruft create https://github.com/acnedata/adck-projects
+cruft create https://github.com/acnedata/adcc-projects
 ```
 
 2. You will be prompted to enter some information about this project such as the project name. 
