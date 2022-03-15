@@ -17,8 +17,6 @@ YYYY-MM-client-project   <- The top-level repository in the stated naming conven
 │
 ├── .pre-commit.yaml     <- Configuration file for pre-commit.
 │
-├── CHANGELOG.md         <- Document to keep track of changes made to the project.
-│
 ├── README.md            <- The top-level README with a brief description of this project.
 │
 ├── data                 <- Here all data is stored which is being version controlled by DVC.
