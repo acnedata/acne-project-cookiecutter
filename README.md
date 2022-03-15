@@ -12,6 +12,7 @@ YYYY-MM-client-project   <- The top-level repository in the stated naming conven
 ├── .dvc                 <- Configuration files for DVC.
 │   ├── .gitignore
 │   └── config
+│
 ├── .gitignore           <- Set up with sensible defaults for excluding files.
 │
 ├── .pre-commit.yaml     <- Configuration file for pre-commit.
@@ -37,6 +38,7 @@ YYYY-MM-client-project   <- The top-level repository in the stated naming conven
 │
 ├── src                  <- Source code used in this project.
 │   └── __init__.py
+│
 └── tests                <- Code for pytest.
     └── __init__.py
 ```
