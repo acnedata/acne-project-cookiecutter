@@ -6,38 +6,38 @@ Data.
 
 ## Project structure
 ```
-YYYY-MM-client-project    <- The top-level repository in the stated naming convention.
-│                            (e.g. 2022-03-acne-survey-analysis).
+YYYY-MM-client-project   <- The top-level repository in the stated naming convention.
+│                           (e.g. 2022-03-acne-survey-analysis).
 │
-├── .dvc                  <- Configuration files for DVC.
+├── .dvc                 <- Configuration files for DVC.
 │   ├── .gitignore
 │   └── config
-├── .gitignore            <- Set up with sensible defaults for excluding files.
+├── .gitignore           <- Set up with sensible defaults for excluding files.
 │
-├── .pre-commit.yaml      <- Configuration file for pre-commit.
+├── .pre-commit.yaml     <- Configuration file for pre-commit.
 │
-├── CHANGELOG.md          <- Document to keep track of changes made to the project.
+├── CHANGELOG.md         <- Document to keep track of changes made to the project.
 │
-├── README.md             <- The top-level README with a brief description of this project.
+├── README.md            <- The top-level README with a brief description of this project.
 │
-├── data                  <- Here all data is stored which is being version controlled by DVC.
+├── data                 <- Here all data is stored which is being version controlled by DVC.
 │   │
-│   ├── interim           <- Data generated in intermediate cleaning and transformation steps.
+│   ├── interim          <- Data generated in intermediate cleaning and transformation steps.
 │   │
-│   ├── processed         <- The final, fully processed data used for traning and visualizations.
+│   ├── processed        <- The final, fully processed data used for traning and visualizations.
 │   │
-│   └── raw               <- The original, immutable data.
+│   └── raw              <- The original, immutable data.
 │
-├── notebooks             <- Jupyter notebooks used for data exploration and code experimentation.
-│                            Naming convention is MMdd-initials-description.
-│                            (e.g. 0311-iw-data exploration)
+├── notebooks            <- Jupyter notebooks used for data exploration and code experimentation.
+│                           Naming convention is MMdd-initials-description.
+│                           (e.g. 0311-iw-data exploration)
 │
-├── pyproject.toml        <- Here are all project dependencies listed. Some dev dependencies are
-│                            already defined.
+├── pyproject.toml       <- Here are all project dependencies listed. Some dev dependencies are
+│                           already defined.
 │
-├── src                   <- Source code used in this project.
+├── src                  <- Source code used in this project.
 │   └── __init__.py
-└── tests                 <- Code for pytest.
+└── tests                <- Code for pytest.
     └── __init__.py
 ```
 
