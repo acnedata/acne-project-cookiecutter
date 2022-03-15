@@ -29,9 +29,11 @@ YYYY-MM-client-project    <- The top-level repository in the stated naming conve
 │   └── raw               <- The original, immutable data.
 │
 ├── notebooks             <- Jupyter notebooks used for data exploration and code experimentation.
-│                            Naming convention is MMdd-initials-description. (e.g. 0311-iw-data exploration)
+│                            Naming convention is MMdd-initials-description.
+│                            (e.g. 0311-iw-data exploration)
 │
-├── pyproject.toml        <- Here are all project dependencies listed. Some dev dependencies are already defined.
+├── pyproject.toml        <- Here are all project dependencies listed. Some dev dependencies are
+│                            already defined.
 │
 ├── src                   <- Source code used in this project.
 │   └── __init__.py
