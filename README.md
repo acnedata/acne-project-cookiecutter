@@ -1,4 +1,4 @@
-# *A*CNE *D*ata *C*ookie*c*utter: Projects
+# ACNE Data Cookiecutter: Projects
 
 This is a [cookiecutter](https://cookiecutter.readthedocs.io/) template used to set up a fresh data project at ACNE
 Data.
