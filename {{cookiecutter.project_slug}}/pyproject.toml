@@ -4,7 +4,7 @@ authors = "{{ cookiecutter.author_name }}"
 version = "0.0.1"
 description = "{{ cookiecutter.project_short_description }}"
 authors = [
-    "{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>",
+    "{{ cookiecutter.author_name }} <{{ cookiecutter.author_mail }}>",
 ]
 readme = "README.md"
 repository = "https://github.com/{{ cookiecutter.github_account }}/{{ cookiecutter.project_slug }}"
