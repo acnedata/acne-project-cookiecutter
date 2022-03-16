@@ -59,7 +59,7 @@ cruft create https://github.com/acnedata/adcc-projects
 
 Then `cd` into this new directory and initialize it with:
 ```
-git init && dvc install
+git init
 ```
 
 3. Next a repository on GitHub as to be created with the follwing command (changing placeholders of course):
@@ -77,9 +77,9 @@ git remote add origin https://github.com/acnedata/<client-YYYY-project>
 poetry install
 ```
 
-6. And add code-formatting pre-commit hooks.
+6. And add Git hooks for DVC & code-formatting.
 ```
-pre-commit install
+dvc install && pre-commit install
 ```
 
 
@@ -94,6 +94,11 @@ git clone https://github.com/acnedata/<client-YYYY-project>
 `cd` into the project directory and run Poetry to set up the environment.
 ```
 poetry install
+```
+
+And get the Git hooks in place for pre-commit and DVC:
+```
+dvc install && pre-commit install
 ```
 
 To pull the data from DVC run:
