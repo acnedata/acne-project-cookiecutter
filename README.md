@@ -79,7 +79,7 @@ poetry install
 
 6. And add Git hooks for DVC & code-formatting.
 ```
-dvc install && pre-commit install
+pre-commit install
 ```
 
 
@@ -98,7 +98,7 @@ poetry install
 
 And get the Git hooks in place for pre-commit and DVC:
 ```
-dvc install && pre-commit install
+pre-commit install
 ```
 
 To pull the data from DVC run:
