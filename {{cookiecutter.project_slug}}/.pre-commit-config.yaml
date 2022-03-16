@@ -1,4 +1,22 @@
 repos:
+-   repo: https://github.com/iterative/dvc
+    rev: main
+    hooks:
+      - id: dvc-pre-commit
+        language_version: python3
+        stages:
+          - commit
+      - id: dvc-pre-push
+        additional_dependencies: ['.[s3]']
+        language_version: python3
+        stages:
+          - push
+      - always_run: true
+        id: dvc-post-checkout
+        language_version: python3
+        stages:
+          - post-checkout
+
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.0.1
     hooks:
@@ -13,6 +31,7 @@ repos:
       - id: end-of-file-fixer
       - id: trailing-whitespace
       - id: mixed-line-ending
+
 -   repo: local
     hooks:
       - id: autoflake
@@ -32,7 +51,7 @@ repos:
         types: [python]
       - id: pyupgrade
         name: pyupgrade
-        entry: poetry run pyupgrade --py37-plus
+        entry: poetry run pyupgrade --py38-plus
         language: system
         types: [python]
       # - id: mypy
