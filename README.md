@@ -64,12 +64,12 @@ git init && dvc install
 
 3. Next a repository on GitHub as to be created with the follwing command (changing placeholders of course):
 ```
-gh repo create --private acnedata/<YYYY-MM-client-project>
+gh repo create --private acnedata/<client-YYYY-project>
 ```
 
 4. And then this repository to be added as remote to the local project (it is recommended to use this https-syntax):
 ```
-git remote add origin https://github.com/acnedata/<YYYY-MM-client-project>
+git remote add origin https://github.com/acnedata/<client-YYYY-project>
 ```
 
 5. We next install all dev-dependencies with Poetry.
@@ -88,7 +88,7 @@ pre-commit install
 Is as easy as cloning the repository stored on GitHub. `cd` to the folder where you store your local repositories
 (such as `~/github/`), and run (changing placeholders):
 ```
-git clone https://github.com/acnedata/YYYY-MM-client-project> .
+git clone https://github.com/acnedata/client-YYYY-project> .
 ```
 
 `cd` into the project directory and run Poetry to set up the environment.
