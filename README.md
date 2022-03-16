@@ -45,7 +45,9 @@ client-YYYY-project      <- The top-level repository in the stated naming conven
 ## Dependencies
 
 To be able to properly work with this template some lodal dependencies need to be fullfilled. Namely AWS CLI,
-GitHub CLI, Git, DVC, cruft, and Poetry need to be installed. 
+GitHub CLI, Git, DVC, cruft, and Poetry need to be installed.
+
+How you solve this is platform dependend. A somewhat platform independent solution is `conda` (channel `conda-forge`) which can also manage your environment. The AWS CLI v2 needs to be installed and configured seperatley though.
 
 
 ## Initialization
@@ -101,9 +103,9 @@ And get the Git hooks in place for pre-commit and DVC:
 pre-commit install
 ```
 
-To pull the data from DVC run:
+To pull the data from DVC, run:
 ```
-dvc pull
+git pull
 ```
 
 ## Usage
@@ -116,8 +118,7 @@ DVC follows a very similar model.
 When new data files are added or generated, we can track them with `dvc add <path-to-file>`. Similary, changes to data
 files are logged with `dvc commit`.
 
-Thanks to the Git hooks, `dvc checkout` on `git checkout` and `dvc push` on `git push` are fully automated. We are also
-being on `git commit` if `dvc commit` needs to be run.
+Thanks to the Git hooks, `dvc checkout` on `git checkout` and `dvc push` on `git push` are fully automated. We are also being remined on `git commit` if `dvc commit` needs to be run.
 
 ### Poetry
 
@@ -148,3 +149,4 @@ cruft update
 - [Git](https://git-scm.com/doc)
 - [GitHub CLI](https://cli.github.com/manual/index)
 - [Poetry](https://python-poetry.org/docs/)
+- [pre-commit](https://pre-commit.com/index.html)
