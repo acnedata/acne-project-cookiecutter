@@ -6,8 +6,8 @@ Data.
 
 ## Project structure
 ```
-YYYY-MM-client-project   <- The top-level repository in the stated naming convention.
-│                           (e.g. 2022-03-acne-survey-analysis).
+client-YYYY-project      <- The top-level repository in the stated naming convention.
+│                           (e.g. acne-2022-survey-analysis).
 │
 ├── .dvc                 <- Configuration files for DVC.
 │   ├── .gitignore
@@ -28,8 +28,9 @@ YYYY-MM-client-project   <- The top-level repository in the stated naming conven
 │   └── raw              <- The original, immutable data.
 │
 ├── notebooks            <- Jupyter notebooks used for data exploration and code experimentation.
-│                           Naming convention is MMdd-initials-description.
-│                           (e.g. 0311-iw-data exploration)
+│                           Naming convention is initials-number-description. The number is for
+│                           ordering purposes and is incremented with every new notebook.
+│                           (e.g. iw-1-data-exploration)
 │
 ├── pyproject.toml       <- Here are all project dependencies listed. Some dev dependencies are
 │                           already defined.
