@@ -15,7 +15,7 @@ black = {extras = ["jupyter"]}
 # flake8 = "*"
 isort = "*"
 ipykernel = "*"
-jupyter-lab = "*"
+jupyterlab = "*"
 # mypy = "*"
 pep8-naming = "*"
 pre-commit = "*"
