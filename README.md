@@ -129,6 +129,13 @@ Usage is simple. We can specify packages need for our project with `poetry add <
 
 The dependencies are then installed by running `poetry install`.
 
+Poetry automatically generates a virtual environment for the project. To run instaled tools or
+scripts within this environment we just need to prepend `poetry run` to the command.
+To start JupyterLab for example, we just need to run:
+```
+poetry run jupter lab
+```
+
 
 ## Updating the template in an ongoing project
 
