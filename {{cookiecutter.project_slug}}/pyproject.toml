@@ -11,6 +11,7 @@ python = ">=3.8.12, <4.0"
 
 [tool.poetry.dev-dependencies]
 autoflake = "*"
+black = {extras = ["jupyter"]}
 # flake8 = "*"
 isort = "*"
 ipykernel = "*"
