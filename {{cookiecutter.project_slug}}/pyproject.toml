@@ -1,35 +1,25 @@
 [tool.poetry]
+authors = [
+  "ACNE Data <contact@acne.se>",
+]
+description = "{{ cookiecutter.project_short_description }}"
 name = "{{ cookiecutter.project_slug }}"
 version = "0.0.1"
-description = "{{ cookiecutter.project_short_description }}"
-authors = [
-    "ACNE Data <contact@acne.se>",
-]
 
 [tool.poetry.dependencies]
-python = ">=3.8.12, <4.0"
+python = ">=3.9, < 3.11"
 
 [tool.poetry.dev-dependencies]
-autoflake = "*"
-black = {extras = ["jupyter"]}
-# flake8 = "*"
-isort = "*"
-ipykernel = "*"
-jupyterlab = "*"
-# mypy = "*"
-pep8-naming = "*"
-pre-commit = "*"
-pytest = "*"
-pyupgrade = "*"
+notebook = "^6.4.10"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
 
 [tool.isort]
 profile = "black"
 src_paths = ["src", "tests"]
 
 [tool.black]
-target-version = ["py38", "py39", "py310"]
 include = '\.pyi?$'
+target-version = ["py38", "py39", "py310"]
