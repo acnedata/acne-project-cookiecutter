@@ -2,5 +2,8 @@
     "project_name": "client-YYYY-project",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
     "dvc_s3_bucket": "s3://ad-dvcstore",
-    "project_short_description": "A short description of the project"
+    "project_short_description": "A short description of the project",
+    "_copy_without_render": [
+        ".github"
+    ]
 }
