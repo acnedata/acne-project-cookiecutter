@@ -1,159 +1,103 @@
-# ACNE Data Cookiecutter: Projects
+# ACNE Data Project Template
 
-This is a [cookiecutter](https://cookiecutter.readthedocs.io/) template used to set up a fresh data project at ACNE
-Data.
+This is a template to guide set up of a fresh data project at ACNE Data.
 
-
-## Project structure
+## Folder structure
 ```
-client-YYYY-project      <- The top-level repository in the stated naming convention.
-│                           (e.g. acne-2022-survey-analysis).
+client-YYYY(-project)    <- The top-level repository in the stated naming convention.
+│                           (e.g. acne-2022). Optionally with a project description (e.g. acne-2022-workplace-survey)
 │
-├── .dvc                 <- Configuration files for DVC.
-│   ├── .gitignore
-│   └── config
+├── .devcontainer/       <- Configuration files for GitHub Codespaces.
 │
-├── .gitignore           <- Set up with sensible defaults for excluding files.
+├── .github/             <- Configuration files for GitHub Actions.
+│   └── workflows/
+│
+├── .gitignore           <- Files and directories that git should ignore.
 │
 ├── .pre-commit.yaml     <- Configuration file for pre-commit.
 │
 ├── README.md            <- The top-level README with a brief description of this project.
 │
-├── data                 <- Here all data is stored which is being version controlled by DVC.
-│   │
-│   ├── interim          <- Data generated in intermediate cleaning and transformation steps.
-│   │
-│   ├── processed        <- The final, fully processed data used for traning and visualizations.
-│   │
-│   └── raw              <- The original, immutable data.
+├── data/                <- Here data used in the project can be stored. These should only be small (< 1MB) files
+│                           as github has a restriction on repository size (100 MB).
 │
 ├── notebooks            <- Jupyter notebooks used for data exploration and code experimentation.
 │                           Naming convention is initials-number-description. The number is for
 │                           ordering purposes and is incremented with every new notebook.
 │                           (e.g. iw-1-data-exploration)
 │
-├── pyproject.toml       <- Here are all project dependencies listed. Some dev dependencies are
-│                           already defined.
+├── pyproject.toml       <- Here are all project dependencies listed.
+├── poetry.lock          <- This is where Poetry describes how to replicate the environment.
 │
 ├── src                  <- Source code used in this project.
 │   └── __init__.py
 │
-└── tests                <- Code for pytest.
+└── tests                <- Code for pytest, if applicable.
     └── __init__.py
 ```
 
-## Dependencies
-
-To be able to properly work with this template some lodal dependencies need to be fullfilled. Namely AWS CLI,
-GitHub CLI, Git, DVC, cruft, and Poetry need to be installed.
-
-How you solve this is platform dependend. A somewhat platform independent solution is `conda` (channel `conda-forge`) which can also manage your environment. The AWS CLI v2 needs to be installed and configured seperatley though.
-
-
 ## Initialization
+1. Setup a new repository on GitHub.
+2. Clone that repo on your local machine or start a Codespaces instance.
+3. Follow the instructions on [repo-config](https://github.com/acnedata/repo-config) to get some 
+basic configuration files.
+4. If you are on Codespaces, rebuild your container to get dependencies in place.
 
-1. Move into the directory where you want to create a new project and run:
-```bash
-cruft create https://github.com/acnedata/adcc-projects
-```
+## Dependency managment with Poetry
 
-2. You will be prompted to enter some information about this project such as the project name. 
+We manage our depencies with [Poetry](https://python-poetry.org/).
 
-Then `cd` into this new directory and initialize it with:
-```
-git init
-```
+To get started we only need four basic commands `init`, `add`, `run`, and `install`.
 
-3. Next a repository on GitHub as to be created with the follwing command (changing placeholders of course):
+1. We create a new `pyproject.toml` file by running:
 ```
-gh repo create --private acnedata/<client-YYYY-project>
-```
-
-4. And then this repository to be added as remote to the local project (it is recommended to use this https-syntax):
-```
-git remote add origin https://github.com/acnedata/<client-YYYY-project>
+poetry init
 ```
 
-5. We next install all dev-dependencies with Poetry.
+If you are planning to put all code into a `src` directory, make sure to add
+```toml
+packages = [{include = "src"}]
 ```
-poetry install
+add the end of the `[tool.poetry]` block.
+
+2. To add a library like Pandas to our Python environment, we just have to run
+```
+poetry add pandas
 ```
 
-6. And add Git hooks for DVC & code-formatting.
-```
-poetry run pre-commit install
-```
+This creates a `poetry.lock` file that we have to make sure to version control as well.
+Check out the [documentation](https://python-poetry.org/docs/dependency-specification/) to learn 
+how dependency constraints are specified in Poetry.
 
-
-## Picking up a in-progress project
-
-Is as easy as cloning the repository stored on GitHub. `cd` to the folder where you store your local repositories
-(such as `~/github/`), and run (changing placeholders):
+3. To execute a script we have to run
 ```
-git clone https://github.com/acnedata/<client-YYYY-project>
+poetry run python src/myscript.py
 ```
 
-`cd` into the project directory and run Poetry to set up the environment.
+4. If we are joining an already set up project that has a `poetry.lock` file, we can install all
+specifed dependencies by running
 ```
 poetry install
 ```
 
-And get the Git hooks in place for pre-commit and DVC:
+To learn more about how to use this tool
+check their [documentation](https://python-poetry.org/docs/basic-usage/).
+
+## Linting with pre-commit
+
+To guarantee a consistent code style and help us stick to best practices, we are using a few
+autoformatters and linters. If you followed the steps from 'Initilization' and are working in
+GitHub Codespaces, everything is set up already for you!
+
+To check if your code is up to standard before pushing your commits, all you have to do is run
 ```
-poetry run pre-commit install
+pre-commit run --all
 ```
-
-To pull the data from DVC, run:
-```
-git pull
-```
-
-## Usage
-
-### Git & DVC
-
-It is assumed that you have a basic understanding of how to work with `Git`, how to `add`, `commit`, `push`, `pull`, etc.
-DVC follows a very similar model.
-
-When new data files are added or generated, we can track them with `dvc add <path-to-file>`. Similary, changes to data
-files are logged with `dvc commit`.
-
-Thanks to the Git hooks, `dvc checkout` on `git checkout` and `dvc push` on `git push` are fully automated. We are also being remined on `git commit` if `dvc commit` needs to be run.
-
-### Poetry
-
-Poetry and the accompanying `pyproject.toml` are our drop-in replacement for pip and `requirements.txt`. 
-
-Usage is simple. We can specify packages need for our project with `poetry add <pypi-package-name>`. Please check the
-[Poetry documentation](https://python-poetry.org/docs/dependency-specification/) for how to specify version constraints.
-
-The dependencies are then installed by running `poetry install`.
-
-Poetry automatically generates a virtual environment for the project. To run instaled tools or
-scripts within this environment we just need to prepend `poetry run` to the command.
-To start JupyterLab for example, we just need to run:
-```
-poetry run jupter lab
-```
-
-
-## Updating the template in an ongoing project
-
-As updates to the template are being made such as addition or removal of code checking tools, we want to propagte those
-updates to onging projects as well.
-
-To update an existing project with template changes, just run the follwing in the root of the project:
-```
-cruft update
-```
-
 
 ## Documentation
 
-- [AWS CLI](https://docs.aws.amazon.com/cli/index.html)
-- [cruft](https://cruft.github.io/cruft/)
-- [DVC](https://dvc.org/doc)
 - [Git](https://git-scm.com/doc)
 - [GitHub CLI](https://cli.github.com/manual/index)
+- [GitHub Codespaces](https://docs.github.com/en/codespaces/overview)
 - [Poetry](https://python-poetry.org/docs/)
 - [pre-commit](https://pre-commit.com/index.html)
